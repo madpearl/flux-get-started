@@ -163,7 +163,7 @@ mariadb:
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer
 ##
 service:
-  type: LoadBalancer
+  type: NodePort
   # HTTP Port
   port: 80
   ## loadBalancerIP:
@@ -171,7 +171,7 @@ service:
   ## nodePorts:
   ##   http: <to set explicitly, choose port between 30000-32767>
   nodePorts:
-    http: ""
+    http: 30001
   ## Enable client source IP preservation
   ## ref http://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
   ##
@@ -218,7 +218,7 @@ resources:
 ##
 ingress:
   ## Set to true to enable ingress record generation
-  enabled: false
+  enabled: true
 
   ## Set this to true in order to add the corresponding annotations for cert-manager
   certManager: false
