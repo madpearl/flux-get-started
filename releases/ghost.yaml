@@ -18,13 +18,14 @@ spec:
       repository: bitnami/ghost
       tag: 3.1.1-debian-9-r0
     persistence:
-      enabled: false
+      enabled: true
     resources:
+      storageClass: slow
       requests:
         memory: 32Mi
         cpu: 10m
     service:
-      type: ClusterIP
+      type: NodePort
     mariadb:
       master:
         persistence:
